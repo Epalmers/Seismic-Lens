@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+}
+
+@media print {
+  .no-print { display: none !important; }
+
+  /* Clean report layout */
+  body { background: white; }
+  main { break-inside: avoid; }
+  section, .overflow-hidden { break-inside: avoid; }
+  .grid > div { break-inside: avoid; }
+  /* Avoid chart clipping */
+  .recharts-wrapper { overflow: visible !important; }
+  /* Consistent page margins */
+  @page { margin: 1cm; }
+}
